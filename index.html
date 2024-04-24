@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.engineering;">
+    <script type="text/javascript" src="https://ui.upcp.wirewheel.io/extensions/upcp-sdk-0.9.2.min.js"></script>
     <title>Consumer UI Embedded Experience Test</title>
 </head>
 <body>
     <h1>Consumer UI Embedded Experience Test</h1>
     <h2>This page is intended to test the embedded experience of the Consumer UI product</h2>
 
-    <iframe src="https://unifiedconsent.osano.engineering/134/" margin-top="50px" height="1000px" width="700px" frameBorder="0"></iframe>
+    <iframe id="wwiframe" src="https://unifiedconsent.osano.engineering/134/" margin-top="50px" height="1000px" width="700px" frameBorder="0"></iframe>
+    <script>
+        const { WireWheelSDK } = window.cmpJavascriptSdk;
+        const embeddedHandler = WireWheelSDK.initEmbeddedParent({
+          targetIframe: document.getElementById("wwiframe")
+        });
+    </script>
 </body>
 </html>
