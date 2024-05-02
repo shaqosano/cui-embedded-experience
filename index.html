@@ -17,6 +17,12 @@
         const embeddedHandler = UnifiedConsentByOsanoSDK.initEmbeddedParent({
           targetIframe: document.getElementById("osano-iframe")
         });
+        embeddedHandler.on('consent:write', (payload) => {
+            console.log('consent written', payload);
+        })
+        embeddedHandler.on('consent:write:gpc', (payload) => {
+            console.log('GPC consent written', payload);
+        })
     </script>
 </body>
 </html>
