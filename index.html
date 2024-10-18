@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script
- data-show
- data-config-id="dab6f9c9-b58d-41d4-8210-e4db752ea2f0"
- data-customer-id="2skdb1YDRiZvJfB1dPK"
- src="https://clientapps.osano.dev/uc-opt/index.js"
-></script>
+    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.dev"> 
+    <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script>
     <title>Consumer UI Embedded Experience Test</title>
 </head>
 <body>
     <h1>Consumer UI Embedded Experience Test</h1>
     <h2>This page is intended to test the embedded experience of the Consumer UI product</h2>
 
-    <button onclick="Osano.prompt.show('2skdb1YDRiZvJfB1dPK','dab6f9c9-b58d-41d4-8210-e4db752ea2f0')">Show consent prompt</button>
+    <iframe height="1000px" width="1000px" src="https://unifiedconsent.osano.dev/245/" />
 </body>
 </html>
