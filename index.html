@@ -10,17 +10,19 @@
     <script type="text/javascript">
         const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk
 
-        UnifiedConsentByOsanoSDK.getToken({
+        if(window.navigator.globalPrivacyControl) {
+            UnifiedConsentByOsanoSDK.getToken({
             issuer: 'https://uc.api.osano.dev/v2/token/create',
             configId: '64f49d97-499c-49b4-8b17-a63ee921b841',
             customerId: '2skdb1YDRiZvJfB1dPK'
             
-        }).then(token => {
-            UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
-                apiUrl: 'https://uc.api.osano.dev/v2/',
-                token
+            }).then(token => {
+                UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
+                    apiUrl: 'https://uc.api.osano.dev/v2/',
+                    token
+                })
             })
-        })
+        }
     </script>
 </body>
 </html>
