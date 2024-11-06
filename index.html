@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KR7MWVQ7');
-    </script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="https://s.uc.osano.com/sdk/v2024.11.2.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script>
     <title>Consumer UI Embedded Experience Test</title>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KR7MWVQ7"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <h1>Consumer UI Embedded Experience Test</h1>
-    <h2>This page is intended to test the embedded experience of the Consumer UI product</h2>
-
-    <iframe height="1000px" width="1000px" src="http://localhost:7010/245/" id="embedded-cui"></iframe>
     <script type="text/javascript">
         const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk
             
         UnifiedConsentByOsanoSDK.initEmbeddedParent({
             targetIframe: document.getElementById('embedded-cui')
+        })
+
+        UnifiedConsentByOsanoSDK.getToken({
+            issuer: 'https://uc.api.osano.dev/v2/token/create',
+            configId: '64f49d97-499c-49b4-8b17-a63ee921b841',
+            customerId: '2skdb1YDRiZvJfB1dPK'
+            
+        }).then(token => {
+            UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
+                apiUrl: 'https://uc.api.osano.dev/v2/',
+                token
+            })
         })
     </script>
 </body>
