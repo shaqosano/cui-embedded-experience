@@ -9,10 +9,6 @@
 <body>
     <script type="text/javascript">
         const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk
-            
-        UnifiedConsentByOsanoSDK.initEmbeddedParent({
-            targetIframe: document.getElementById('embedded-cui')
-        })
 
         UnifiedConsentByOsanoSDK.getToken({
             issuer: 'https://uc.api.osano.dev/v2/token/create',
