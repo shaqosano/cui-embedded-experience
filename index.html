@@ -9,7 +9,7 @@
 <body>
     <script type="text/javascript">
         const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk
-
+        console.log('globalPrivacyControl', window.navigator.globalPrivacyControl)
         if(window.navigator.globalPrivacyControl) {
             UnifiedConsentByOsanoSDK.getToken({
             issuer: 'https://uc.api.osano.dev/v2/token/create',
