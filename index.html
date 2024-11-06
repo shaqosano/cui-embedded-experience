@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script>
-    <title>Consumer UI Embedded Experience Test</title>
-</head>
-<body>
     <script type="text/javascript">
         const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk
 
-            UnifiedConsentByOsanoSDK.getToken({
-            issuer: 'https://uc.api.osano.dev/v2/token/create',
-            configId: '64f49d97-499c-49b4-8b17-a63ee921b841',
-            customerId: '2skdb1YDRiZvJfB1dPK'
-            
-            }).then(token => {
-                UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
-                    apiUrl: 'https://uc.api.osano.dev/v2/',
-                    token
-                })
+        UnifiedConsentByOsanoSDK.getToken({
+        issuer: 'https://uc.api.osano.dev/v2/token/create',
+        configId: '64f49d97-499c-49b4-8b17-a63ee921b841',
+        customerId: '2skdb1YDRiZvJfB1dPK'
+        
+        }).then(token => {
+            UnifiedConsentByOsanoSDK.registerPrivacyProtocols({
+                apiUrl: 'https://uc.api.osano.dev/v2/',
+                token
             })
+        })
     </script>
+    <title>Consumer UI Embedded Experience Test</title>
+</head>
+<body>
+    <h1>Consumer UI Embedded Experience Test</h1>
+    <p>This is a test page for the Consumer UI Embedded Experience.</p>
 </body>
 </html>
