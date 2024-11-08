@@ -26,8 +26,7 @@
     <h1>Consumer UI Embedded Experience Test</h1>
     <p>This is a test page for the Consumer UI Embedded Experience.</p>
     <script type="text/javascript"> 
-        const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk; 
-        UnifiedConsentByOsanoSDK.initEmbeddedParent({ 
+        window.unifiedConsentJsSdk.UnifiedConsentByOsanoSDK.initEmbeddedParent({ 
             targetIframe: document.getElementById('osano-uc-iframe') 
         }); 
     </script>
