@@ -6,7 +6,7 @@
     <title>Consumer UI Embedded Experience Test</title>
     <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.dev"> 
     <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script> 
-    <script type="text/javascript"> 
+    <script type="text/javascript" crossorigin="anonymous"> 
         const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk 
         if(window.navigator.globalPrivacyControl) { 
             UnifiedConsentByOsanoSDK.getToken({ 
