@@ -18,14 +18,14 @@
     <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.dev"> 
     <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script> 
     <script type="text/javascript"> 
-        const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk 
+        const { UnifiedConsentByOsanoSDK: osanoUcSdk } = window.unifiedConsentJsSdk 
         if(window.navigator.globalPrivacyControl) { 
-            UnifiedConsentByOsanoSDK.getToken({ 
+            osanoUcSdk.getToken({ 
             issuer: 'https://uc.api.osano.dev/v2/token/create', 
             configId: '64f49d97-499c-49b4-8b17-a63ee921b841', 
             customerId: '2skdb1YDRiZvJfB1dPK', 
             }).then(token => { 
-            UnifiedConsentByOsanoSDK.registerPrivacyProtocols({ 
+                osanoUcSdk.registerPrivacyProtocols({ 
                 apiUrl: 'https://uc.api.osano.dev/v2/', 
                 token 
             }) 
