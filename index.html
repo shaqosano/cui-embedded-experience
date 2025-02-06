@@ -4,33 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consumer UI Embedded Experience Test</title>
-    <!-- <script type="text/javascript" src="https://s.dev.upcp.wirewheel.io/sdk/v1.0.0.min.js"></script> -->
     <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.dev"> 
+    <script type="text/javascript" crossorigin="anonymous"> 
+      window.UcByOsanoSdkConfig = {
+        issuer: 'https://uc.api.osano.dev/v2/token/create',
+        configId: '64f49d97-499c-49b4-8b17-a63ee921b841',
+        customerId: '2skdb1YDRiZvJfB1dPK',
+        apiUrl: 'https://uc.api.osano.dev/v2/',
+        targetIframe: document.getElementById('osano-uc-iframe')
+      }
+   </script>
     <script type="text/javascript" src="https://s.uc.osano.dev/sdk/latest.min.js" crossorigin="anonymous"></script> 
-    <!-- <script type="text/javascript" crossorigin="anonymous"> 
+    <script type="text/javascript" crossorigin="anonymous"> 
        const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk 
-       if(window.navigator.globalPrivacyControl) { 
-         UnifiedConsentByOsanoSDK.getToken({ 
-           issuer: 'https://uc.api.osano.dev/v2/token/create', 
-           configId: '64f49d97-499c-49b4-8b17-a63ee921b841', 
-           customerId: '2skdb1YDRiZvJfB1dPK', 
-         }).then(token => { 
-           UnifiedConsentByOsanoSDK.registerPrivacyProtocols({ 
-             apiUrl: 'https://uc.api.osano.dev/v2/', 
-             token 
-           }) 
-         }) 
-       } 
-    </script> -->
+         UnifiedConsentByOsanoSDK.getToken().then(token => { 
+            window.UcByOsanoSdkConfig.token = token
+            if(window.navigator.globalPrivacyControl) {
+              UnifiedConsentByOsanoSDK.registerPrivacyProtocols() 
+            } 
+         })
+         UnifiedConsentByOsanoSDK.initEmbeddedParent();
+    </script>
 </head>
 <body>
     <h1>Consumer UI Embedded Experience Test</h1>
     <p>This is a test page for the Consumer UI Embedded Experience.</p>
-    <!-- <iframe id="osano-uc-iframe" src="https://unifiedconsent.osano.dev/245/" height="1000px" width="1000px" frameborder="none"></iframe> 
-    <script type="text/javascript" crossorigin="anonymous"> 
-      window.unifiedConsentJsSdkUnifiedConsentByOsanoSDK.initEmbeddedParent({ 
-        targetIframe: document.getElementById('osano-uc-iframe') 
-        }); 
-      </script> -->
+    <iframe title="Osano UC" id="osano-uc-iframe" src="https://unifiedconsent.osano.dev/245/" height="1000px" width="1000px" frameborder="none"></iframe> 
 </body>
 </html>
