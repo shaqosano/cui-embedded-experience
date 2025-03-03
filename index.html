@@ -11,7 +11,14 @@
         configId: '556fd6ae-763d-44a7-b6e4-0bb33987683e',
         customerId: 'AzZcrjS8mPcKBOKq',
         apiUrl: 'https://uc.api.osano.com/v2/',
-        targetIframe: document.getElementById('osano-uc-iframe')
+        targetIframe: document.getElementById('osano-uc-iframe'),
+        defaultActions: [
+          {
+            target: '00000000-0000-0000-0000-000000000001',
+            vendor: '556fd6ae-763d-44a7-b6e4-0bb33987683e',
+            action: 'ACCEPT'
+          }
+        ]
       }
    </script>
     <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script> 
