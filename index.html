@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consumer UI Embedded Experience Test</title>
-    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.com"> 
-    <script type="text/javascript" crossorigin="anonymous"> 
+    <!-- <meta http-equiv="Content-Security-Policy" content="frame-src 'self' unifiedconsent.osano.com">  -->
+    <!-- <script type="text/javascript" crossorigin="anonymous"> 
       window.UcByOsanoSdkConfig = {
         issuer: 'https://uc.api.osano.com/v2/token/create',
         configId: '556fd6ae-763d-44a7-b6e4-0bb33987683e',
@@ -22,8 +22,8 @@
         ]
         }
       }
-   </script>
-    <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script> 
+   </script> -->
+    <!-- <script type="text/javascript" src="https://s.uc.osano.com/sdk/latest.min.js" crossorigin="anonymous"></script> 
     <script type="text/javascript" crossorigin="anonymous"> 
        const { UnifiedConsentByOsanoSDK } = window.unifiedConsentJsSdk 
          UnifiedConsentByOsanoSDK.getToken().then(token => { 
@@ -32,15 +32,21 @@
               UnifiedConsentByOsanoSDK.registerPrivacyProtocols() 
             } 
          })
-    </script>
+    </script> -->
+    <script
+    data-config-id="dab6f9c9-b58d-41d4-8210-e4db752ea2f0"
+    data-customer-id="2skdb1YDRiZvJfB1dPK"
+    src="https://clientapps.osano.dev/uc-opt/index.js"
+    ></script>
 </head>
 <body>
     <h1>Consumer UI Embedded Experience Test</h1>
     <p>This is a test page for the Consumer UI Embedded Experience.</p>
-    <iframe title="osano UC" id="osano-uc-iframe" src="https://unifiedconsent.osano.com/206/" height="1000px" width="1000px" frameborder="none"></iframe> 
+
+    <!-- <iframe title="osano UC" id="osano-uc-iframe" src="https://unifiedconsent.osano.com/206/" height="1000px" width="1000px" frameborder="none"></iframe> 
     <script type="text/javascript" crossorigin="anonymous"> 
       window.UcByOsanoSdkConfig.targetIframe = document.getElementById('osano-uc-iframe')
       UnifiedConsentByOsanoSDK.initEmbeddedParent(); 
-    </script>
+    </script> -->
 </body>
 </html>
